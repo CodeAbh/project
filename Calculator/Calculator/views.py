@@ -1,9 +1,11 @@
 from django.shortcuts import render
 
+# Function initialization
 
 def Calculator(request):
     data = {}
     try:
+        # iteration on operators
         if request.method == "POST":
             n1 = eval(request.POST.get('num1'))
             n2 = eval(request.POST.get('num2'))
@@ -22,6 +24,9 @@ def Calculator(request):
                 'c': c
             }
     except:
-        if n2 == 0:
             c = "invalid operator"
     return render(request, 'index.html', data)
+
+
+
+    
