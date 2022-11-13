@@ -1,0 +1,62 @@
+{% extends 'head.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-5 mx-auto border rounded pt-4">
+            <h3 class="alter alter-light border rounded"> Create An Account</h3>
+            <form action="/signup" method="POST">
+
+
+                {% csrf_token %}
+                {% if error %}
+                <div class="alert alert-danger " role="alert">
+                    {{error}}
+                </div>
+
+                {% endif %}
+
+                <div id='name1' class="form-group">
+                    <label for="">First Name</label>
+                    <input type="text" name="firstname" id=" " value="{{values.first_name}}" class="form-control" placeholder="">
+                </div>
+
+
+                <div id="name2" class="form-group">
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname" id=" " value="{{values.last_name}}" class="form-control" placeholder="">
+                </div>
+
+
+                <div id="phone" class="form-group">
+                    <label for="">Phone Number</label>
+                    <input type="text" name="number" id="" value="{{values.phone}}" class="form-control" placeholder="000000000">
+                </div>
+
+
+                <div id="email" class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="" value="{{values.email}}" class="form-control" placeholder="example@gmil.com">
+                </div>
+
+
+                <div id="password" class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="" class="form-control" placeholder="*******">
+                </div>
+
+                <div class="form-group">
+                    <input class="btn-btn-sm btn-info" type="submit" value="SUBMIT">
+
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
